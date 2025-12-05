@@ -7,7 +7,7 @@ class SplashScreen1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: Color(0xFF1A2230),
       appBar: AppBar(
         actions: const [],
         backgroundColor: Colors.transparent,
@@ -90,13 +90,13 @@ class SplashScreen1 extends StatelessWidget {
                     );
                   },
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.blueGrey,
+                    backgroundColor: Color(0xFF1A2230),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10),
                     ),
                   ),
                   child: Text(
-                    "Continue",
+                    "Lanjutkan",
                     style: TextStyle(fontSize: 16, color: Colors.white),
                   ),
                 ),
