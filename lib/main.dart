@@ -1,7 +1,7 @@
+import 'package:firebase_latihan/screen/splashscreen1.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
-import 'pages/login_page.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -14,6 +14,6 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(title: 'Latihan Firebase', home: LoginPage());
+    return MaterialApp(title: 'Latihan Firebase', home: SplashScreen1());
   }
 }
