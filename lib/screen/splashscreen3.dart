@@ -1,3 +1,4 @@
+import 'package:firebase_latihan/login/login.dart';
 import 'package:flutter/material.dart';
 
 class Splashscreen3 extends StatelessWidget {
@@ -83,9 +84,10 @@ class Splashscreen3 extends StatelessWidget {
                 width: double.infinity,
                 child: ElevatedButton(
                   onPressed: () {
-                    Navigator.push(
+                    Navigator.pushAndRemoveUntil(
                       context,
-                      MaterialPageRoute(builder: (context) => Splashscreen3()),
+                      MaterialPageRoute(builder: (context) => const Login()),
+                      (Route<dynamic> route) => false,
                     );
                   },
                   style: ElevatedButton.styleFrom(
