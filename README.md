@@ -18,17 +18,17 @@ Project ini adalah hasil pengerjaan **Tugas Week 10** untuk mata kuliah Pemrogra
 ## 📝 Langkah Integrasi (Singkat)
 Berikut adalah rangkuman proses integrasi yang dilakukan:
 
-1.  **Setup Firebase Console**:
+1.  **Setup Firebase Console**
     * Membuat project baru & mengaktifkan *Sign-in method* **Email/Password**.
     * Mengambil Web API Key untuk testing.
 
-2.  **Pengujian API (Postman)**:
+2.  **Pengujian API (Postman)**
     * Melakukan tes **Register** & **Login** via REST API untuk memastikan server aktif.
 
-3.  **Konfigurasi Flutter**:
+3.  **Konfigurasi Flutter**
     * Instalasi CLI: `npm install -g firebase-tools` & `flutterfire configure`.
     * Menambahkan paket: `firebase_core` dan `firebase_auth`.
 
-4.  **Implementasi Code**:
+4.  **Implementasi Code**
     * Inisialisasi `Firebase.initializeApp()` di `main.dart`.
     * Membuat logika login dengan `signInWithEmailAndPassword`.
