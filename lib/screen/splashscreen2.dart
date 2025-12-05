@@ -36,7 +36,7 @@ class Splashscreen2 extends StatelessWidget {
             const Text(
               "Izinnn Abangkuu 🔥",
               style: TextStyle(
-                fontSize: 22.0,
+                fontSize: 24.0,
                 fontWeight: FontWeight.bold,
                 color: Colors.white,
               ),
