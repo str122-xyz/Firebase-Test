@@ -27,7 +27,7 @@ class _HomePageState extends State<HomePage> {
 
     // Ambil Token
     String? token = await messaging.getToken();
-    debugPrint("FCM Token: $token");
+    print("FCM Token: $token");
   }
 
   @override
