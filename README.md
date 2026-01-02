@@ -1,34 +1,100 @@
 # Latihan Firebase & Flutter Integration 🚀
 
-Project ini adalah hasil pengerjaan **Tugas Week 10** untuk mata kuliah Pemrograman Mobile. Aplikasi ini mendemonstrasikan integrasi antara Flutter dengan backend Firebase Authentication, dilengkapi dengan UI Login yang modern dan Splash Screen.
+Project ini merupakan hasil pengerjaan **Tugas Week 10** pada mata kuliah **Pemrograman Mobile**.  
+Aplikasi dikembangkan menggunakan **Flutter** dan terintegrasi dengan **Firebase** sebagai backend, meliputi **Firebase Authentication** dan **Firebase Cloud Messaging (FCM)**.
+
+Aplikasi memiliki alur:
+**Splash Screen → Login → Dashboard**, dengan tampilan UI modern dan fungsional.
+
+---
 
 ## 📱 Fitur Utama
-1.  **Splash Screen Animasi**: Intro aplikasi dengan logo "Tipis-Tipis" (🔥) dan efek transisi yang halus.
-2.  **Login Page UI**: Tampilan login modern yang responsif dengan validasi input (Email & Password).
-3.  **Firebase Auth**: Integrasi login penuh menggunakan backend Firebase Authentication.
-4.  **Error Handling**: Menampilkan pesan error yang informatif jika login gagal (misal: password salah atau user tidak ditemukan).
-5.  **Loading State**: Indikator loading pada tombol saat proses autentikasi berlangsung.
+
+1. **Splash Screen**  
+   Menampilkan intro aplikasi sebelum masuk ke halaman login.
+
+2. **Login Page UI**  
+   Tampilan login modern dengan validasi input email dan password.
+
+3. **Firebase Authentication**  
+   Autentikasi user menggunakan Email dan Password melalui Firebase Auth.
+
+4. **Dashboard Page**  
+   Halaman utama setelah login yang menampilkan informasi dan pesan notifikasi.
+
+5. **Firebase Cloud Messaging (FCM)**  
+   Implementasi push notification menggunakan Firebase Cloud Messaging:
+   - Generate **FCM Token** per device
+   - Menerima notifikasi saat aplikasi **foreground**
+   - Menerima notifikasi saat aplikasi **background**
+
+6. **Error Handling & Loading State**  
+   Menampilkan pesan error saat login gagal serta indikator loading saat proses autentikasi.
+
+---
 
 ## 🛠️ Tech Stack & Tools
-* **Flutter SDK**: Framework UI utama.
-* **Firebase Authentication**: Layanan backend untuk manajemen user.
-* **Postman**: Digunakan untuk pengujian API (Register & Login) sebelum integrasi.
-* **VS Code**: Code Editor.
 
-## 📝 Langkah Integrasi (Singkat)
-Berikut adalah rangkuman proses integrasi yang dilakukan:
+- **Flutter SDK** — Framework UI utama
+- **Firebase Authentication** — Autentikasi user
+- **Firebase Cloud Messaging (FCM)** — Push notification
+- **Postman** — Pengujian pengiriman notifikasi individu
+- **VS Code** — Code Editor
+- **Android Device** — Media pengujian aplikasi
 
-1.  **Setup Firebase Console**
-    * Membuat project baru & mengaktifkan *Sign-in method* **Email/Password**.
-    * Mengambil Web API Key untuk testing.
+---
 
-2.  **Pengujian API (Postman)**
-    * Melakukan tes **Register** & **Login** via REST API untuk memastikan server aktif.
+## 📝 Langkah Integrasi (Ringkas)
 
-3.  **Konfigurasi Flutter**
-    * Instalasi CLI: `npm install -g firebase-tools` & `flutterfire configure`.
-    * Menambahkan paket: `firebase_core` dan `firebase_auth`.
+### 1. Setup Firebase Console
+- Membuat project Firebase
+- Mengaktifkan **Authentication (Email/Password)**
+- Mengaktifkan **Firebase Cloud Messaging**
+- Menghubungkan Flutter dengan Firebase menggunakan `flutterfire configure`
 
-4.  **Implementasi Code**
-    * Inisialisasi `Firebase.initializeApp()` di `main.dart`.
-    * Membuat logika login dengan `signInWithEmailAndPassword`.
+### 2. Konfigurasi Flutter
+- Menambahkan dependency:
+  - `firebase_core`
+  - `firebase_auth`
+  - `firebase_messaging`
+- Inisialisasi Firebase di `main.dart`
+
+### 3. Implementasi Firebase Authentication
+- Login menggunakan `signInWithEmailAndPassword`
+- Menangani error login dan loading state
+
+### 4. Implementasi Firebase Cloud Messaging (FCM)
+- Meminta izin notifikasi (Android 13+)
+- Mengambil **FCM Token** pada halaman Dashboard
+- Menangani notifikasi:
+  - Foreground menggunakan `FirebaseMessaging.onMessage`
+  - Background melalui sistem notifikasi Android
+
+### 5. Pengujian Notifikasi
+- Mengirim notifikasi menggunakan **Firebase Console (Test on device)**
+- Pengujian pengiriman notifikasi ke device tertentu menggunakan **Postman**
+
+---
+
+## 📸 Screenshot Aplikasi
+
+<div style="display:flex; gap:10px; flex-wrap:wrap">
+  <img src="ss.png"/>
+  <img src="ss1.png"/>
+  <img src="ssan2.jpeg" width="250"/>
+  <img src="ssan3.jpeg" width="250"/>
+  <img src="ssan.jpeg" width="250"/>
+  <img src="ssan1.jpeg" width="250"/>
+</div>
+
+---
+
+## ✅ Kesimpulan
+
+Aplikasi berhasil mengintegrasikan Flutter dengan Firebase Authentication dan Firebase Cloud Messaging.  
+Sistem login dan notifikasi berjalan dengan baik serta dapat dijadikan contoh implementasi Firebase pada aplikasi Flutter Android.
+
+---
+
+**NIM** 1123150070 <br>
+**Created by:** Satria Herlambang
