@@ -15,6 +15,7 @@ class _HomePageState extends State<HomePage> {
   @override
   void initState() {
     super.initState();
+    print("🔥 Dashboard Initstate");
     setupFCM();
   }
 
@@ -51,7 +52,7 @@ class _HomePageState extends State<HomePage> {
               ),
               const SizedBox(height: 20),
               const Text(
-                "Welcome 👋",
+                "Welcome Selamat Datang 👋",
                 style: TextStyle(fontSize: 26, fontWeight: FontWeight.bold),
               ),
               const SizedBox(height: 10),
