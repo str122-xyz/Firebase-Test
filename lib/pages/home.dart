@@ -15,20 +15,28 @@ class _HomePageState extends State<HomePage> {
   @override
   void initState() {
     super.initState();
-    print("🔥 Dashboard Initstate");
     setupFCM();
   }
 
   Future<void> setupFCM() async {
-    print("Setting up Firebase Cloud Messaging...");
     final messaging = FirebaseMessaging.instance;
 
-    // Izinnn (android13+)
     await messaging.requestPermission();
 
-    // Ambil Token
     String? token = await messaging.getToken();
-    print("FCM Token: $token");
+
+    setState(() {
+      _message = "FCM Token:\n$token";
+    });
+
+    FirebaseMessaging.onMessage.listen((RemoteMessage message) {
+      if (message.notification != null) {
+        setState(() {
+          _message =
+              "${message.notification!.title}\n${message.notification!.body}";
+        });
+      }
+    });
   }
 
   @override
