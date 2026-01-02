@@ -24,6 +24,10 @@ class _HomePageState extends State<HomePage> {
 
     // Izinnn (android13+)
     await messaging.requestPermission();
+
+    // Ambil Token
+    String? token = await messaging.getToken();
+    debugPrint("FCM Token: $token");
   }
 
   @override
