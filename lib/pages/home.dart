@@ -19,21 +19,22 @@ class _HomePageState extends State<HomePage> {
   }
 
   Future<void> setupFCM() async {
+    print("Setting up Firebase Cloud Messaging...");
     final messaging = FirebaseMessaging.instance;
 
+    // Izinnn (android13+)
     await messaging.requestPermission();
 
+    // Ambil Token
     String? token = await messaging.getToken();
+    debugPrint("FCM Token: $token");
 
-    setState(() {
-      _message = "FCM Token:\n$token";
-    });
-
+    // Listener foreground
     FirebaseMessaging.onMessage.listen((RemoteMessage message) {
       if (message.notification != null) {
         setState(() {
           _message =
-              "${message.notification!.title}\n${message.notification!.body}";
+              "${message.notification!.title} : ${message.notification!.body}";
         });
       }
     });
