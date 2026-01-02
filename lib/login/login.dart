@@ -1,4 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_latihan/pages/home.dart';
 import 'package:flutter/material.dart';
 
 class Login extends StatefulWidget {
@@ -39,8 +40,10 @@ class _LoginState extends State<Login> {
             TextButton(
               onPressed: () {
                 Navigator.pop(context);
-                // TODO: Di sini nanti arahkan ke halaman Home/Dashboard
-                // Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => HomePage()));
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(builder: (context) => HomePage()),
+                );
               },
               child: const Text('OK'),
             ),
